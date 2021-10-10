@@ -1,0 +1,29 @@
+<div>
+  <h2>The Blog</h2>
+  <div id="articles"></div>
+</div>
+
+<script>
+  const displayArticles = async () => {
+    const res = await fetch("/articles");
+    const articles = await res.json();
+    console.log("displayArticles, articles", articles);
+    const container = document.getElementById("articles");
+    articles.forEach((article) => {
+      // Image
+      const img = document.createElement("img");
+      img.src = article.thumbnail.formats.medium.url;
+      container.appendChild(img);
+      // Title
+      const title = document.createElement("h1");
+      title.innerText = article.title;
+      container.appendChild(title);
+
+      // Content
+      const content = document.createElement("p");
+      content.innerText = article.content;
+      container.appendChild(content);
+    });
+  };
+  displayArticles();
+</script>
