@@ -30,7 +30,7 @@ module.exports = {
   // "0 0 * * * *": async () => {
   //   console.log("Once at midnight");
   // },
-  // Cron Job to Send a mail to every user every second
+  // Cron Job to Send a mail to every user every second. This cron job works for a collection type of post with an author and likes property
   // "* * * * * *": async () => {
   //   console.log("Once a day, at midnight");
   //   const users = await strapi.plugins[
@@ -50,5 +50,40 @@ module.exports = {
   //       });
   //     })
   //   );
+  // },
+  // Send Email every second to only one user.
+  // "* * * * * *": async () => {
+  //   console.log("Cron every second!");
+  //   try {
+  //     await strapi.plugins["email"].services.email.send({
+  //       // email address generated from 10minutemail
+  //       to: "xjdhlrsrwsqsrbxsjo@mrvpm.net",
+  //       from: "xjdhlrsrwsqsrbxsjo@mrvpm.net",
+  //       subject: "Use strapi email provider successfully",
+  //       text: "Hello world!, I am gonna improve you!",
+  //       html: "<h1>Hello world!</h1>",
+  //     });
+  //   } catch (e) {
+  //     console.log("Exception in sending err", err[0].message);
+  //   }
+  // },
+  // Another cron jobs for strapi components // Its a fucking shit worst code in my entire life
+  // "* * * * * *": async () => {
+  //   const firstArticle = await strapi.services.post.findOne({ id: 1 });
+  //   console.log(firstArticle);
+  //   const secondArticle = await strapi.services.post.findOne({ id: 2 });
+  //   console.log(secondArticle);
+  //   firstArticle.viewsPerCategory.push({
+  //     contentcategory: 3,
+  //     numberOfViews: 1337,
+  //   });
+  //   const index = 1;
+  //   const targeting2ndViewsPerCategory = firstArticle;
+  //   targeting2ndViewsPerCategory.viewsPerCategory[index].numberOfViews = 42;
+  //   const update = await strapi.services.post.update(
+  //     { id: 1 },
+  //     targeting2ndViewsPerCategory
+  //   );
+  //   console.log(update);
   // },
 };

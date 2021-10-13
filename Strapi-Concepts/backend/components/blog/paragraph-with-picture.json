@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_blog_paragraph_with_pictures",
+  "info": {
+    "name": "paragraph_with_picture",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "picture": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "picture_position": {
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "right",
+        "left",
+        "bottom"
+      ]
+    }
+  }
+}

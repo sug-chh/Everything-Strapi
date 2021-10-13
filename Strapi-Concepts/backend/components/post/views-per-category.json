@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_post_views_per_categories",
+  "info": {
+    "name": "viewsPerCategory",
+    "icon": "eye",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "contentcategory": {
+      "model": "contentcategory"
+    },
+    "numberOfViews": {
+      "type": "biginteger"
+    }
+  }
+}
